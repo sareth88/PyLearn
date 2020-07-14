@@ -13,3 +13,7 @@
 
 command1 = "switchport trunk allowed vlan 1,2,3,5,8"
 command2 = "switchport trunk allowed vlan 1,3,8,9"
+
+s1 = set(command1[command1.find('1'):]) & set(command2[command2.find('1'):])
+s1.discard(',')
+print(sorted(list(s1)))
